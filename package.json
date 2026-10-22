@@ -49,5 +49,13 @@
         "@deepseek-ai/dsh-client-ui-chat"
       ]
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darkknight2333/dsh-timeline-ui.git"
+  },
+  "homepage": "https://github.com/darkknight2333/dsh-timeline-ui#readme",
+  "bugs": {
+    "url": "https://github.com/darkknight2333/dsh-timeline-ui/issues"
   }
 }

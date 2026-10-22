@@ -17,9 +17,27 @@
 
 要求：DeepSeek Harness Web 版（桌面版同样适用，它加载的就是同一套 Web 客户端），插件以 bundle 形式安装到 **profile**。
 
-### 方式一：Release 附件（推荐）
+### 通过 DSH 插件管理安装
 
-从 [Releases](../../releases) 下载 `dsh-timeline-ui-0.1.0.tgz`，然后让 Harness 里的 Agent 安装这个包，或在你的 profile 目录里执行：
+在 DSH 的插件页面添加本仓库链接：
+
+```text
+https://github.com/darkknight2333/dsh-timeline-ui
+```
+
+也可以使用本机 DSH CLI（把 `desktop` 换成实际运行的 profile）：
+
+```bash
+dsh plugin --profile desktop add github:darkknight2333/dsh-timeline-ui
+```
+
+Web 用户把 profile 换成自己的值，例如 `web`。如果 `dsh` 不在 PATH，请使用安装目录中 CLI 的完整路径。安装后重启 DSH，并刷新界面。
+
+以下为使用包管理器的备用安装方式。
+
+### 方式一：Release 附件（备用）
+
+从 [Releases](https://github.com/darkknight2333/dsh-timeline-ui/releases) 下载 `dsh-timeline-ui-0.1.0.tgz`，然后让 Harness 里的 Agent 安装这个包，或在你的 profile 目录里执行：
 
 ```bash
 # profile 目录：桌面版/Web 版都是 <DSH_HOME>/profiles/<profile>/
@@ -33,7 +51,7 @@ pnpm add /path/to/dsh-timeline-ui-0.1.0.tgz
 
 ```bash
 cd "$DSH_HOME/profiles/desktop"
-pnpm add github:<owner>/dsh-timeline-ui
+pnpm add github:darkknight2333/dsh-timeline-ui
 ```
 
 `lib/` 是构建产物且已入库，因此从 git 安装也能直接运行（不会触发本仓库的构建脚本）。
@@ -136,3 +154,7 @@ docs/                验证记录、截图说明
 ## 致谢
 
 界面结构与交互参考了 Claude / Codex 的会话列表形态；实现完全基于 Harness 公开的槽位与标准 props。
+
+## 用户反馈
+
+问题反馈：[GitHub Issues](https://github.com/darkknight2333/dsh-timeline-ui/issues)。请提供 DSH 版本、插件版本、操作系统和复现步骤，截图时隐藏账号、路径及私人聊天内容。

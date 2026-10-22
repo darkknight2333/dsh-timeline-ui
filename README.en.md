@@ -9,6 +9,17 @@ Both features have their own switch under **Settings → General**; turning one 
 
 ## Install
 
+Add this repository in the DSH plugin manager: https://github.com/darkknight2333/dsh-timeline-ui
+
+Or use the DSH CLI, replacing `desktop` with your active profile (for example `web`):
+
+```sh
+dsh plugin --profile desktop add github:darkknight2333/dsh-timeline-ui
+```
+
+Restart DSH and refresh the UI. If the CLI is not in PATH, use its full installed path. The package-manager method below is an alternative.
+
+
 Requires the DeepSeek Harness Web UI (the desktop app loads the same client). Install into a **profile**, not the application directory:
 
 ```bash
@@ -16,7 +27,7 @@ cd "$DSH_HOME/profiles/<profile>"          # e.g. ~/.dsh/profiles/desktop
 pnpm add /path/to/dsh-timeline-ui-0.1.0.tgz
 ```
 
-Add `dsh-timeline-ui` to `dsh.profile.bundles` in that profile's `package.json`, then restart the harness. Installing straight from git works too (`pnpm add github:<owner>/dsh-timeline-ui`) because `lib/` is committed.
+Add `dsh-timeline-ui` to `dsh.profile.bundles` in that profile's `package.json`, then restart the harness. Installing straight from git works too (`pnpm add github:darkknight2333/dsh-timeline-ui`) because `lib/` is committed.
 
 The profile a desktop app and `dsh web` use is the same directory; pick it with `DSH_PROFILE` (defaults to `desktop` here). Never install into the application install folder — an upgrade wipes it.
 
