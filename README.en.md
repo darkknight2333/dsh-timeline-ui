@@ -1,5 +1,9 @@
 # dsh-timeline-ui
 
+[![CI](https://github.com/darkknight2333/dsh-timeline-ui/actions/workflows/ci.yml/badge.svg)](https://github.com/darkknight2333/dsh-timeline-ui/actions/workflows/ci.yml)
+
+[下载 / Releases](https://github.com/darkknight2333/dsh-timeline-ui/releases/latest) · [MIT License](LICENSE) · [参与改进 / Contributing](CONTRIBUTING.md)
+
 Two optional UI enhancements for the [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) Web client:
 
 1. **Conversation timeline** — the sidebar list grouped by local calendar day (Today / Yesterday / `Oct 20` / `Dec 20, 2025`), newest first, numbered, with search, an archived filter, and show-all.
@@ -53,5 +57,7 @@ Disable the bundle in Settings → Plugins, or `pnpm remove dsh-timeline-ui` and
 npm run build   # src/client.js -> lib/client.js, plus portability checks
 npm test        # 56 offline checks against the built module
 ```
+
+CI checks Windows/Linux with Node.js 22/24, including build output consistency and package contents. It does not run the DSH UI. See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution and manual verification guidance.
 
 MIT licensed. The icon is original artwork from this repository.

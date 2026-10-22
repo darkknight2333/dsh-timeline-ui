@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 安装与使用 / Installation and usage
+    url: https://github.com/darkknight2333/dsh-timeline-ui#readme
+    about: 先查看安装步骤、兼容性与已知限制。
+  - name: 下载版本 / Downloads
+    url: https://github.com/darkknight2333/dsh-timeline-ui/releases
+    about: 获取已发布的插件安装包。

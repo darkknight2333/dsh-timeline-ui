@@ -1,5 +1,9 @@
 # dsh-timeline-ui · 对话时间线与导航增强
 
+[![CI](https://github.com/darkknight2333/dsh-timeline-ui/actions/workflows/ci.yml/badge.svg)](https://github.com/darkknight2333/dsh-timeline-ui/actions/workflows/ci.yml)
+
+[下载 / Releases](https://github.com/darkknight2333/dsh-timeline-ui/releases/latest) · [MIT License](LICENSE) · [参与改进 / Contributing](CONTRIBUTING.md)
+
 给 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) Web 界面的一个客户端插件，做两件事，各自带开关：
 
 | 功能 | 效果 |
@@ -151,15 +155,17 @@ locale/              插件元数据（中/英）
 docs/                验证记录、截图说明
 ```
 
+CI 会在 Windows/Linux、Node.js 22/24 上检查构建、离线测试、构建产物同步及打包清单；它不会启动 DSH，真实界面仍需人工验证。参与改进请看 [CONTRIBUTING.md](CONTRIBUTING.md)。
+
 ## 许可与素材
 
 - 代码：MIT（见 [LICENSE](LICENSE)）。
 - 图标：本仓库原创 SVG，随 MIT 一同发布。
-- 未包含任何第三方截图、Harness 源码或素材；不依赖 Harness 的任何私有包。
+- 未打包 Harness 源码或私有包。界面预览为基于应用界面的 AI 辅助演示图，已替换个人内容；DeepSeek Harness 的名称与品牌标识归其各自权利人所有。
 
 ## 致谢
 
-界面结构与交互参考了 Claude / Codex 的会话列表形态；实现完全基于 Harness 公开的槽位与标准 props。
+界面结构与交互参考了 Claude / Codex 的会话列表形态；侧边栏使用 Harness 的槽位与标准 props；导航条通过运行时探测内部 DOM 实现，兼容性限制见上文。
 
 ## 用户反馈
 

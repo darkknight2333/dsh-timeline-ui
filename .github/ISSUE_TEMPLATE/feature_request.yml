@@ -1,0 +1,21 @@
+name: Feature request
+description: 提出功能建议 / Suggest an improvement
+title: "[Feature] "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 想解决什么问题？ / Problem
+      description: 说明使用场景；请不要包含私人会话或账号信息。
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: 期望的行为 / Expected behaviour
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: DSH 版本、插件版本、系统 / Environment
