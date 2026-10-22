@@ -7,6 +7,12 @@ Two optional UI enhancements for the [DeepSeek Harness](https://github.com/deeps
 
 Both features have their own switch under **Settings → General**; turning one off restores the native UI immediately.
 
+## Preview
+
+![Date-grouped sidebar and left-side conversation navigation](docs/assets/preview.png)
+
+> AI-assisted, privacy-safe illustration based on the application interface. The account, conversation titles, and message text are demo content.
+
 ## Install
 
 Add this repository in the DSH plugin manager: https://github.com/darkknight2333/dsh-timeline-ui
