@@ -78,7 +78,7 @@ pnpm add github:<owner>/dsh-timeline-ui
 
 | 项目 | 状态 |
 |---|---|
-| 构建、单元/离线测试（46 项） | ✅ 自动通过 |
+| 构建、单元/离线测试（56 项） | ✅ 自动通过 |
 | 插件安装、启用、设置行注册 | ✅ 自动通过 |
 | 停用/卸载后恢复原生界面 | ✅ 代码路径已测（清理样式、监听器、观察器） |
 | 真实界面截图、鱼眼观感、缩放/折叠 | ⚠️ **需人工确认**，见 [docs/VERIFICATION.md](docs/VERIFICATION.md) |
@@ -112,7 +112,7 @@ pnpm add github:<owner>/dsh-timeline-ui
 
 ```bash
 npm run build     # src/client.js → lib/client.js（包装成 ModuleLoader 工厂）+ 可移植性检查
-npm test          # 46 项离线测试：分组、筛选、编号、导航条探测、开关、清理
+npm test          # 56 项离线测试：分组、筛选、编号、导航条探测、开关、清理
 npm run verify    # build + test
 ```
 

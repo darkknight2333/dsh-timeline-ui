@@ -24,7 +24,7 @@ The profile a desktop app and `dsh web` use is the same directory; pick it with 
 
 Tested with DeepSeek Harness `0.2.1-rc.2` on Windows desktop. The rail is not a slot, so the plugin discovers it at runtime (a `<nav>` with a `*_frame` class whose `button[data-index]` children share a `*_mark` class inside a `*_slot` parent) and generates styles from the discovered prefix — no CSS hash is baked in. If a future version changes that shape, the rail feature disables itself and says so in its settings row.
 
-Automated: build, 46 offline checks (grouping, filtering, numbering, discovery, switches, teardown). Manual: screenshots, resize/collapse behaviour, fisheye feel — see `docs/VERIFICATION.md`.
+Automated: build, 56 offline checks (grouping, filtering, numbering, discovery, switches, teardown). Manual: screenshots, resize/collapse behaviour, fisheye feel — see `docs/VERIFICATION.md`.
 
 ## Uninstall
 
@@ -34,7 +34,7 @@ Disable the bundle in Settings → Plugins, or `pnpm remove dsh-timeline-ui` and
 
 ```bash
 npm run build   # src/client.js -> lib/client.js, plus portability checks
-npm test        # 46 offline checks against the built module
+npm test        # 56 offline checks against the built module
 ```
 
 MIT licensed. The icon is original artwork from this repository.

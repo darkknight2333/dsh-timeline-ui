@@ -396,6 +396,45 @@ check('far marks stay at the 8px baseline', Math.abs(widths[0] - 8) < 0.2 && Mat
 pointerMove({ target: body, clientY: 45 })
 check('leaving the rail clears the inline widths', marks.children.every((mark) => !mark.style.props.has('--dtu-rail-w')))
 
+section('rail hover state machine')
+const scroll = [...listeners.document.get('scroll')].pop()
+const pointerLeave = [...listeners.document.get('pointerleave')].pop()
+const widthList = () => marks.children.map((mark) => mark.style.props.get('--dtu-rail-w') || '-')
+
+pointerMove({ target: marks.children[4], clientY: 45 })
+check('hovering paints the fisheye', widthList().some((width) => width !== '-'))
+
+pointerMove({ target: body, clientY: 300 })
+check('moving to the body clears every width', widthList().every((width) => width === '-'))
+check('moving to the body drops the fisheye class', !documentElement.classList.contains('dtu-fisheye'))
+
+scroll({ target: body })
+check('body scroll after leaving cannot repaint', widthList().every((width) => width === '-'))
+
+pointerMove({ target: marks.children[2], clientY: 25 })
+const peakWhileHovering = widthList()[2]
+scroll({ target: marks })
+check('rail scroll while hovering still repaints', widthList()[2] === peakWhileHovering && peakWhileHovering !== '-')
+
+// A frame queued just before the pointer left must not repaint when it finally runs.
+const queued = []
+const synchronousRaf = windowStub.requestAnimationFrame
+windowStub.requestAnimationFrame = (fn) => { queued.push(fn); return 7 }
+pointerMove({ target: marks.children[5], clientY: 55 })
+windowStub.requestAnimationFrame = synchronousRaf
+pointerMove({ target: body, clientY: 300 })
+for (const frame of queued) frame()
+check('a stale queued frame cannot repaint after leaving', widthList().every((width) => width === '-'))
+check('the stale frame leaves the fisheye class off', !documentElement.classList.contains('dtu-fisheye'))
+
+pointerLeave({})
+check('pointerleave on an idle rail is harmless', widthList().every((width) => width === '-'))
+
+pointerMove({ target: marks.children[6], clientY: 65 })
+check('re-entering the rail paints again', widthList()[6] !== '-' && widthList()[6] !== undefined)
+pointerMove({ target: body, clientY: 300 })
+check('leaving again clears it', widthList().every((width) => width === '-'))
+
 section('switches')
 const sidebarRow = registrations.get('settings.general.item#timeline-ui.sidebar').Component
 const railRow = registrations.get('settings.general.item#timeline-ui.rail').Component
