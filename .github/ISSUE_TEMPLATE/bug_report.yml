@@ -1,0 +1,69 @@
+name: Bug report
+description: 报告 dsh-timeline-ui 的问题 / Report a problem
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请尽量附上控制台报错与截图；描述不了的就先写现象。
+        提交前请确认已移除账号、路径、会话标题等隐私信息。
+
+  - type: input
+    id: dsh-version
+    attributes:
+      label: DeepSeek Harness 版本
+      description: 设置 → 通用 最下方的版本号（例如 0.2.1-rc.2）
+      placeholder: 0.2.1-rc.2
+    validations:
+      required: true
+
+  - type: input
+    id: plugin-version
+    attributes:
+      label: 插件版本
+      placeholder: 0.1.0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: feature
+    attributes:
+      label: 受影响的功能
+      options:
+        - 对话列表按日期分组
+        - 对话导航条（左置 / 鱼眼）
+        - 设置里的开关
+        - 安装 / 卸载
+        - 其他
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: 现象
+      description: 你做了什么、期望什么、实际看到什么
+    validations:
+      required: true
+
+  - type: textarea
+    id: console
+    attributes:
+      label: 控制台输出（可选）
+      description: 打开开发者工具 → Console，粘贴与 dsh-timeline-ui 有关的报错
+      render: shell
+
+  - type: input
+    id: environment
+    attributes:
+      label: 系统与客户端
+      placeholder: Windows 11 · 桌面版 / macOS 14 · Chrome 130
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 自查
+      options:
+        - label: 关闭插件开关后问题消失（说明确实与插件有关）
+        - label: 已尝试刷新页面重启 Harness
+        - label: 截图中没有个人信息

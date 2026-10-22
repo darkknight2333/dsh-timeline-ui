@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Timeline UI",
+    "description": "Groups the sidebar conversation list by local day and moves the per-turn rail to the left with a fisheye hover. Both features have their own switch in Settings."
+  }
+}

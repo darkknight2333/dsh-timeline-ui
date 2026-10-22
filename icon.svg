@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Timeline UI">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3b6ff5"/>
+      <stop offset="1" stop-color="#7b48c8"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="56" height="56" rx="14" fill="url(#g)"/>
+  <g stroke="#fff" stroke-linecap="round">
+    <path d="M14 20h12M14 30h12M14 40h12M14 50h12" stroke-width="2.4"/>
+    <path d="M34 20h8M34 30h14M34 40h20M34 50h10" stroke-width="3.2"/>
+  </g>
+</svg>
